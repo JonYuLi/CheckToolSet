@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CheckToolSet
 {
-    public partial class Form1 : Form
+    public partial class CheckToolSetForm : Form
     {
-        public Form1()
+        public CheckToolSetForm()
         {
             InitializeComponent();
         }
