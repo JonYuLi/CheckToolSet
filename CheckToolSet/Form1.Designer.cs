@@ -45,6 +45,7 @@
             this.textBoxMainEdit.Name = "textBoxMainEdit";
             this.textBoxMainEdit.Size = new System.Drawing.Size(370, 125);
             this.textBoxMainEdit.TabIndex = 0;
+            this.textBoxMainEdit.TextChanged += new System.EventHandler(this.textBoxMainEdit_TextChanged);
             // 
             // comboBoxVerifyMode
             // 
@@ -59,6 +60,7 @@
             this.comboBoxVerifyMode.Size = new System.Drawing.Size(118, 20);
             this.comboBoxVerifyMode.TabIndex = 1;
             this.comboBoxVerifyMode.Text = "请选择校验方式";
+            this.comboBoxVerifyMode.SelectedIndexChanged += new System.EventHandler(this.comboBoxVerifyMode_SelectedIndexChanged);
             // 
             // radioBtnHexMode
             // 
@@ -71,6 +73,7 @@
             this.radioBtnHexMode.TabStop = true;
             this.radioBtnHexMode.Text = "十六进制模式";
             this.radioBtnHexMode.UseVisualStyleBackColor = true;
+            this.radioBtnHexMode.CheckedChanged += new System.EventHandler(this.radioBtnHexMode_CheckedChanged);
             // 
             // radioBtnAsciiMode
             // 
@@ -81,6 +84,7 @@
             this.radioBtnAsciiMode.TabIndex = 2;
             this.radioBtnAsciiMode.Text = "字符模式";
             this.radioBtnAsciiMode.UseVisualStyleBackColor = true;
+            this.radioBtnAsciiMode.CheckedChanged += new System.EventHandler(this.radioBtnAsciiMode_CheckedChanged);
             // 
             // label1
             // 
