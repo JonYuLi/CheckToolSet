@@ -1,13 +1,7 @@
 ﻿using CheckToolSet.Check;
 using CheckToolSet.Utility;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CheckToolSet
@@ -46,13 +40,21 @@ namespace CheckToolSet
 
             str.Replace(' ', '\0');
 
-            if (radioBtnAsciiMode.Checked == false)
+            try
             {
-                data = ConvertArray.AsciiToHex(str.ToArray());
+                if (radioBtnAsciiMode.Checked == false)
+                {
+                    data = ConvertArray.AsciiToHex(str.ToArray());
+                }
+                else
+                {
+                    data = ConvertArray.CharToByte(str.ToArray());
+                }
             }
-            else
+            catch (ArgumentOutOfRangeException)
             {
-                data = ConvertArray.CharToByte(str.ToArray());
+                textBoxResult.Text = "OutOfRange";
+                return;
             }
 
             switch (comboBoxVerifyMode.SelectedIndex)
@@ -67,7 +69,7 @@ namespace CheckToolSet
                     textBoxResult.Text = LrcCheck.GetCheck(data).ToString("X2");
                     break;
                 case 3:
-                    textBoxResult.Text = "Not Implemented";
+                    textBoxResult.Text = CrcCheck.GetCheck(data).ToString("X2");
                     break;
                 case 4:
                     textBoxResult.Text = "Not Implemented";
