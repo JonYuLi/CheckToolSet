@@ -38,7 +38,7 @@ namespace CheckToolSet
             byte[] data;
             string str = textBoxMainEdit.Text;
 
-            str.Replace(' ', '\0');
+            str = str.Replace(" ", "");
 
             try
             {
